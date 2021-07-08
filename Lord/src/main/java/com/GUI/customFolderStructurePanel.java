@@ -54,6 +54,7 @@ public class customFolderStructurePanel extends JPanel {
 		tree.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
 		    @Override
 		    public void valueChanged(TreeSelectionEvent e) {
+		    	e
 		        System.out.println(e.getPath().toString());
 		    }
 		});
