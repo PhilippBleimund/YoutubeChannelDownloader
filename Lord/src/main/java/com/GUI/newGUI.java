@@ -98,7 +98,7 @@ public class newGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 882, 646);
+		frame.setBounds(100, 100, 600, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel GeneralPanel = new JPanel();
@@ -217,6 +217,19 @@ public class newGUI {
 		});
 		controlPanel.add(addNewEntry_btn);
 		controlPanel.add(newTab_btn);
+		
+		JButton customFolderStructure_btn = new JButton("custom folder structure");
+		customFolderStructure_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UIManager.put("OptionPane.minimumSize", new Dimension(400, 350));
+				customFolderStructurePanel folderStructure = new customFolderStructurePanel();
+				int selected = JOptionPane.showOptionDialog(null , folderStructure, "", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, null, null);
+			    if(selected == JOptionPane.OK_OPTION) {
+			    	
+			    }
+			}
+		});
+		controlPanel.add(customFolderStructure_btn);
 		
 		downloadArea_tPane = new JTabbedPane(JTabbedPane.TOP);
 		GeneralPanel.add(downloadArea_tPane, BorderLayout.CENTER);
